@@ -30,6 +30,7 @@ def grille():
         for colonne in range(n):
             transit.append(canvas.create_rectangle(colonne*c+2, ligne*c+2, (colonne+1)*c+2, (ligne+1)*c+2))
         cases.append(transit)
+
 #Crée le robot et ses paramètres
 def robot():
     pass
