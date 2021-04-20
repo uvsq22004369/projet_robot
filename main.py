@@ -54,8 +54,8 @@ def bounce():
 def show_Path():
     pass
 
-#Permet de revenir une action en arrière (créer un bouton et une variable "old_Action qui stocke la position précédente et se faisant remplacer par "new_Action")
-def back():
+#Fait recommencer le jeu
+def reset():
     pass
 
 #Affiche le score / liste des meilleurs scores
