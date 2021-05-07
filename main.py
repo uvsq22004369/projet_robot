@@ -202,7 +202,7 @@ explication.grid(row=0, column=0)
 sauvegarde = tk.Button(racine, text="sauvegarder", command=save())
 sauvegarde.grid(row=6, column= 1)
 
-texte_compteur = tk.Label(racine, text="Nombre de déplacements:  ")
+texte_compteur = tk.Label(racine, text=("Nombre de déplacements:  ",a))
 texte_compteur.grid(row=0, column=3)
 
 texte_resultat = tk.Label(racine, text="Jeu résolu: NON", bg="red", fg="white")
