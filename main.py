@@ -98,7 +98,7 @@ def selectionne(event):
 def Clavier(event):
     global X1, X2, X3, X4, Y1, Y2, Y3, Y4
     touche = event.keysym
-    print(touche)
+    print(touche) 
     # déplacement vers le haut
     if touche == 'Up':
         Y1 -= 200
@@ -138,7 +138,7 @@ PionB = canvas.create_oval(X3-15, Y3-15, X3+15, Y3+15, width=2, fill='blue')
 PionJ = canvas.create_oval(X4-15, Y4-15, X4+15, Y4+15, width=2, fill='yellow')
 canvas.focus_set()
 canvas.bind('<Key>',Clavier)
-canvas.grid(row =1, column =0)
+canvas.grid(row =1, column =0, rowspan=4)
 
 #création grille
 for ligne in range(n):
@@ -195,10 +195,20 @@ carre_restart = canvas.create_rectangle(280+2, 280+2, 360+2, 360+2, fill="black"
 
 canvas_move = tk.Canvas(racine, width= WIDTH/5, height= HEIGHT, bg="black")
 canvas_move.bind('Key', move)
-canvas_move.grid(row=1, column=1)
+canvas_move.grid(row=1, column=1, rowspan=4)
 
 
+def rouge():
+    pass
 
+def vert():
+    pass
+
+def bleu():
+    pass
+
+def jaune():
+    pass
 
 
 #Bouton label etc...
@@ -210,15 +220,24 @@ explication = tk.Label(racine, text ='Selectionne un pion avec ta souris puis ut
 explication.grid(row=0, column=0)
 
 sauvegarde = tk.Button(racine, text="Sauvegarder", command=save())
-sauvegarde.grid(row=6, column= 1)
+sauvegarde.grid(row=6, column= 0)
+
+R = tk.Button(racine, bg = "red", command=rouge)
+R.grid(row=1, column=2)
+B = tk.Button(racine, bg = "blue", command=rouge)
+B.grid(row=2, column=2)
+V = tk.Button(racine, bg = "green", command=rouge)
+V.grid(row=3, column=2)
+J = tk.Button(racine, bg = "yellow", command=rouge)
+J.grid(row=4, column=2)
 
 texte_compteur = tk.Label(racine, text="Nombre de déplacements:  ")
-texte_compteur.grid(row=0, column=3)
+texte_compteur.grid(row=0, column=2)
 
 texte_resultat = tk.Label(racine, text="Jeu résolu: NON", bg="red", fg="white")
-texte_resultat.grid(row=0, column=2)
+texte_resultat.grid(row=0, column=1)
 
 recommencer = tk.Button(racine, text="Reset", command=reset)
-recommencer.grid(row=1, column= 0)
+recommencer.grid(row=2, column= 0, rowspan=2)
 
 racine.mainloop()
